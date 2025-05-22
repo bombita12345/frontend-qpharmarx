@@ -1,0 +1,10 @@
+<div class="avatar" [class.bot-avatar]="isBot" [class.user-avatar]="!isBot">
+    <ng-container *ngIf="isBot; else userInitials">
+        <div class="avatar-container">
+            <img src="assets/images/AI_Expert_GIF_Logo.gif" alt="AI Bot Avatar" class="bot-gif" />
+        </div>
+    </ng-container>
+    <ng-template #userInitials>
+        {{ initials }}
+    </ng-template>
+</div>

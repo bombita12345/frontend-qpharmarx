@@ -1,0 +1,98 @@
+@use './styles/_variables' as *;
+@use './styles/_mixins' as *;
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    font-family: 'Roboto', sans-serif;
+    height: 100%;
+    color: $text-color;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url("assets/images/bg_dots_grey.png");
+    background-color: rgb(255, 255, 255);
+    background-size: 100%;
+    // background-image: radial-gradient(#ddd 1px, transparent 1px);
+    // background-size: 20px 20px;
+}
+
+
+
+
+a {
+    color: $primary-color;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+button {
+    cursor: pointer;
+    font-family: inherit;
+}
+
+// Utility classes
+.text-primary {
+    color: $primary-color;
+}
+
+.text-secondary {
+    color: $secondary-color;
+}
+
+.text-light {
+    color: $light-text-color;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mt-1 {
+    margin-top: $spacing-xs;
+}
+
+.mt-2 {
+    margin-top: $spacing-sm;
+}
+
+.mt-3 {
+    margin-top: $spacing-md;
+}
+
+.mt-4 {
+    margin-top: $spacing-lg;
+}
+
+.mt-5 {
+    margin-top: $spacing-xl;
+}
+
+.mb-1 {
+    margin-bottom: $spacing-xs;
+}
+
+.mb-2 {
+    margin-bottom: $spacing-sm;
+}
+
+.mb-3 {
+    margin-bottom: $spacing-md;
+}
+
+.mb-4 {
+    margin-bottom: $spacing-lg;
+}
+
+.mb-5 {
+    margin-bottom: $spacing-xl;
+}

@@ -1,0 +1,23 @@
+<div class="message-container" [class.user-message]="message.sender === 'user'"
+    [class.bot-message]="message.sender === 'bot'">
+    <div class="message-content">
+        <ng-container *ngIf="message.isProcessing; else messageText">
+            <div class="typing-indicator">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </ng-container>
+        <ng-template #messageText>
+            <div [innerHTML]="message.text | lineBreaks"></div>
+        </ng-template>
+    </div>
+
+    <div class="avatar-container" *ngIf="message.sender === 'user'">
+        <app-user-avatar [initials]="userInfo.initials"></app-user-avatar>
+    </div>
+
+    <div class="avatar-container" *ngIf="message.sender === 'bot'">
+        <app-user-avatar [isBot]="true"></app-user-avatar>
+    </div>
+</div>

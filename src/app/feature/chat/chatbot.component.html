@@ -1,0 +1,35 @@
+<div class="chatbot-container" [class.conversation-started]="conversationStarted">
+    <div class="chatbot-header" *ngIf="conversationStarted || (userInfo$ | async)">
+        <!-- <app-user-avatar [isBot]="true"></app-user-avatar> -->
+        <div class="welcome-message" *ngIf="!conversationStarted">
+            <img src="assets/images/AI_Expert_GIF_Logo.gif" alt="AI Bot Avatar" class="bot-gif" />
+            <h2>Hi, {{ (userInfo$ | async)?.name }}!</h2>
+            <p>How can I help you today?</p>
+        </div>
+    </div>
+
+    <div class="messages-container" *ngIf="conversationStarted" #messagesContainer>
+        <ng-container *ngIf="(messages$ | async) as messages; else loading">
+            <div class="messages-list" *ngIf="messages.length > 0">
+                <ng-container *ngFor="let message of messages">
+                    <app-chat-message [message]="message" [userInfo]="(userInfo$ | async)!"></app-chat-message>
+                </ng-container>
+            </div>
+        </ng-container>
+    </div>
+
+    <div class="suggestions-grid" *ngIf="!conversationStarted">
+        <app-suggestion-box *ngFor="let suggestion of (suggestions$ | async)" [suggestion]="suggestion"
+            (select)="onSelectSuggestion($event)">
+        </app-suggestion-box>
+    </div>
+
+    <div class="input-container">
+        <app-chat-input (sendMessage)="onSendMessage($event)"></app-chat-input>
+    </div>
+
+    <ng-template #loading>
+        <p>Loading messages...</p>
+    </ng-template>
+
+</div>

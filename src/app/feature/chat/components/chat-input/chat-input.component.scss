@@ -7,6 +7,12 @@
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     margin-top: 16px;
     margin-bottom: 16px;
+    border: 2px solid transparent; // Add default border
+
+    // When child input is focused
+    &:focus-within {
+        border-color: #8cc7f7; // Blue border
+    }
 }
 
 .chat-input {

@@ -39,8 +39,9 @@ export class ChatInputComponent {
         }
 
         this.zone.run(() => {
-          this.inputText = transcript;
+          this.inputText = transcript.slice(0, 300);
         });
+
 
         if (event.results[event.results.length - 1].isFinal) {
           this.recognition.stop(); // Auto-stop after speech finishes
@@ -65,11 +66,12 @@ export class ChatInputComponent {
   }
 
   onSubmit(): void {
-    if (this.inputText.trim() && !this.isDisabled) {
+    if (this.inputText.trim() && !this.isDisabled && this.inputText.length <= 300) {
       this.sendMessage.emit(this.inputText);
       this.inputText = '';
     }
   }
+
 
   toggleMic(): void {
     if (!this.recognition) return;

@@ -1,98 +1,98 @@
-@use './styles/_variables' as *;
-@use './styles/_mixins' as *;
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+// @use './styles/_variables' as *;
+// @use './styles/_mixins' as *;
+// @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+// @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+// * {
+//     box-sizing: border-box;
+//     margin: 0;
+//     padding: 0;
+// }
 
-html,
-body {
-    font-family: 'Roboto', sans-serif;
-    height: 100%;
-    color: $text-color;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-image: url("assets/images/bg_dots_grey.png");
-    background-color: rgb(255, 255, 255);
-    background-size: 100%;
-    // background-image: radial-gradient(#ddd 1px, transparent 1px);
-    // background-size: 20px 20px;
-}
-
-
+// html,
+// body {
+//     font-family: 'Roboto', sans-serif;
+//     height: 100%;
+//     color: $text-color;
+//     background-repeat: repeat;
+//     background-position: center;
+//     // background-image: url("assets/images/bg_dots_grey.png");
+//     // background-color: rgb(255, 255, 255);
+//     // background-size: 100%;
+//     background-image: radial-gradient(#ddd 1px, transparent 1px);
+//     background-size: 20px 20px;
+// }
 
 
-a {
-    color: $primary-color;
-    text-decoration: none;
 
-    &:hover {
-        text-decoration: underline;
-    }
-}
 
-button {
-    cursor: pointer;
-    font-family: inherit;
-}
+// a {
+//     color: $primary-color;
+//     text-decoration: none;
 
-// Utility classes
-.text-primary {
-    color: $primary-color;
-}
+//     &:hover {
+//         text-decoration: underline;
+//     }
+// }
 
-.text-secondary {
-    color: $secondary-color;
-}
+// button {
+//     cursor: pointer;
+//     font-family: inherit;
+// }
 
-.text-light {
-    color: $light-text-color;
-}
+// // Utility classes
+// .text-primary {
+//     color: $primary-color;
+// }
 
-.text-center {
-    text-align: center;
-}
+// .text-secondary {
+//     color: $secondary-color;
+// }
 
-.mt-1 {
-    margin-top: $spacing-xs;
-}
+// .text-light {
+//     color: $light-text-color;
+// }
 
-.mt-2 {
-    margin-top: $spacing-sm;
-}
+// .text-center {
+//     text-align: center;
+// }
 
-.mt-3 {
-    margin-top: $spacing-md;
-}
+// .mt-1 {
+//     margin-top: $spacing-xs;
+// }
 
-.mt-4 {
-    margin-top: $spacing-lg;
-}
+// .mt-2 {
+//     margin-top: $spacing-sm;
+// }
 
-.mt-5 {
-    margin-top: $spacing-xl;
-}
+// .mt-3 {
+//     margin-top: $spacing-md;
+// }
 
-.mb-1 {
-    margin-bottom: $spacing-xs;
-}
+// .mt-4 {
+//     margin-top: $spacing-lg;
+// }
 
-.mb-2 {
-    margin-bottom: $spacing-sm;
-}
+// .mt-5 {
+//     margin-top: $spacing-xl;
+// }
 
-.mb-3 {
-    margin-bottom: $spacing-md;
-}
+// .mb-1 {
+//     margin-bottom: $spacing-xs;
+// }
 
-.mb-4 {
-    margin-bottom: $spacing-lg;
-}
+// .mb-2 {
+//     margin-bottom: $spacing-sm;
+// }
 
-.mb-5 {
-    margin-bottom: $spacing-xl;
-}
+// .mb-3 {
+//     margin-bottom: $spacing-md;
+// }
+
+// .mb-4 {
+//     margin-bottom: $spacing-lg;
+// }
+
+// .mb-5 {
+//     margin-bottom: $spacing-xl;
+// }

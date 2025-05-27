@@ -13,8 +13,8 @@ export class ChatbotService {
     public messages$ = this.messagesSubject.asObservable();
 
     private userInfoSubject = new BehaviorSubject<UserInfo>({
-        name: 'Sophia',
-        initials: 'S'
+        name: '',
+        initials: ''
     });
     public userInfo$ = this.userInfoSubject.asObservable();
 

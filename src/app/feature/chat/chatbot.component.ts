@@ -20,6 +20,7 @@ import { ChatInputComponent } from './components/chat-input/chat-input.component
 export class ChatbotComponent implements OnInit, AfterViewInit {
     @ViewChild('messagesContainer') messagesContainer!: ElementRef;
 
+
     messages$!: Observable<ChatMessage[]>;
     suggestions$!: Observable<SuggestionItem[]>;
     userInfo$!: Observable<UserInfo | null>;
@@ -60,14 +61,32 @@ export class ChatbotComponent implements OnInit, AfterViewInit {
         }
     }
 
+    botIsTyping = false;
     onSendMessage(text: string): void {
         this.chatbotService.addUserMessage(text);
         this.conversationStarted = true;
+
+        this.botIsTyping = true;
+
+        // Simulate bot response delay
+        setTimeout(() => {
+            // Handle bot logic...
+            this.botIsTyping = false;
+        }, 3000);
     }
+
 
     onSelectSuggestion(suggestion: SuggestionItem): void {
         this.chatbotService.addUserMessage(suggestion.title);
         this.conversationStarted = true;
+
+        this.botIsTyping = true;
+
+        // Simulate bot response delay
+        setTimeout(() => {
+            // Handle bot logic...
+            this.botIsTyping = false;
+        }, 3000);
     }
 }
 

@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class ChatInputComponent {
   @Input() isDisabled = false;
+  @Input() isGenerating = false;  // Add this line
   @Output() sendMessage = new EventEmitter<string>();
 
   inputText = '';
@@ -76,8 +77,11 @@ export class ChatInputComponent {
   toggleMic(): void {
     if (!this.recognition) return;
 
-    if (!this.isListening) {
-      this.recognition.start(); // Start listening
+    if (this.isListening) {
+      this.recognition.stop(); // Stop listening if already started
+    } else {
+      this.recognition.start(); // Start listening if not started
     }
   }
+
 }

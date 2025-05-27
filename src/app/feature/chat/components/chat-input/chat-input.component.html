@@ -2,13 +2,14 @@
     <input type="text" class="chat-input" placeholder="Ask anything..." [(ngModel)]="inputText"
         (keyup.enter)="onSubmit()" [disabled]="isDisabled" maxlength="300" />
 
-    <button class="mic-button" [class.active]="isListening" (click)="toggleMic()" [disabled]="isDisabled"
-        [ngClass]="{ listening: isListening }" title="Voice Input">
+    <button class="mic-button" [class.active]="isListening" (click)="toggleMic()"
+        [disabled]="isDisabled || isGenerating" [ngClass]="{ listening: isListening }" title="Voice Input">
         <i class="fas fa-microphone"></i>
     </button>
 
-    <button class="send-button" (click)="onSubmit()" [disabled]="!inputText.trim()"
-        [ngClass]="{ disabled: isDisabled }">
+
+    <button class="send-button" (click)="onSubmit()" [disabled]="!inputText.trim() || isDisabled || isGenerating"
+        [ngClass]="{ disabled: isDisabled || isGenerating }">
         <span class="send-icon"><i class="fas fa-arrow-right"></i></span>
     </button>
 </div>

@@ -67,7 +67,12 @@ export class ChatInputComponent {
   }
 
   onSubmit(): void {
-    if (this.inputText.trim() && !this.isDisabled && this.inputText.length <= 300) {
+    if (
+      this.inputText.trim() &&
+      !this.isDisabled &&
+      !this.isGenerating &&
+      this.inputText.length <= 300
+    ) {
       this.sendMessage.emit(this.inputText);
       this.inputText = '';
     }

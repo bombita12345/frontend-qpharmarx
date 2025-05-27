@@ -87,6 +87,8 @@ export class ChatbotComponent implements OnInit, AfterViewInit {
             // Handle bot logic...
             this.botIsTyping = false;
         }, 3000);
+
+        
     }
 }
 

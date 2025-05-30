@@ -88,5 +88,9 @@ export class ChatInputComponent {
       this.recognition.start(); // Start listening if not started
     }
   }
+  preventDrag(event: DragEvent): void {
+    event.preventDefault();
+    event.stopPropagation();
+  }
 
 }
